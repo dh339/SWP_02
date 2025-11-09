@@ -8,7 +8,7 @@
 #define _DUTY_MIN 400    // servo full clock-wise position (0 degree)
 #define _DUTY_NEU 1400   // servo neutral position (90 degree)
 #define _DUTY_MAX 2606   // servo full counter-clockwise position (180 degree)
-// ^^^ _DUTY_MAX를 2600 -> 2606으로 미세 보정(정수 나눗셈 오차 방지용, 체감 동일)
+
 
 #define _DIST_MIN  100.0   // minimum distance 100mm (10 cm)
 #define _DIST_MAX  250.0   // maximum distance 250mm (25 cm)
@@ -38,7 +38,7 @@ void setup()
   myservo.writeMicroseconds(_DUTY_NEU);
 
   Serial.begin(1000000);    // 1,000,000 bps
-  last_loop_time = millis(); // ★ 주기 제어용 기준시간 초기화 (추가)
+  last_loop_time = millis(); // 주기 제어용 기준시간 초기화 (추가)
 }
 
 void loop()
